@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="img_section">
+      <div class="img_block">
+        <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" alt="로그인 로고">
+        <h1>Login</h1>
+      </div>
+      <span class="img_source">사진출처:<a href="https://unsplash.com/photos/gTb46ltlKOI">Cam Morin</a></span>
+    </div>
+    <div class="email_section">
+      <h2>주의! 진짜 회원가입 창이 아닙니다</h2>
+      <form action="/post" method="post">
+        <fieldset>
+          <legend>회원가입 작성</legend>
+          <div class="input_wrapper">
+            <div class="row">
+              <div>
+                <label for="last_name">성</label>
+                <input type="text" id="last_name" name="last_name" required>
+              </div>
+              <div>
+                <label for="first_name">이름</label>
+                <input type="text" id="first_name" name="first_name" required>
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required>
+              </div>
+              <div>
+                <label for="phone">전화번호</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" minlength="8" maxlength="16"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}" title="8자리 이상,16자리 이하 숫자,대문자가 각각 하나씩 들어가야 합니다."
+                  required>
+                <div class="password_error error">
+                  <span class="password_num"></span>
+                  <span class="password_char"></span>
+                  <span class="password_eight"></span>
+                </div>
+              </div>
+              <div>
+                <label for="password_confirm">비밀번호 확인</label>
+                <input type="password" id="password_confirm" name="password_confirm" minlength="8" maxlength="16"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}" title="8자리 이상 16자리 이하, 숫자,대문자가 각각 하나씩 들어가야 합니다."
+                  required>
+                <div class="password_confirm_error error">
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <button type="submit">회원가입</button>
+      </form>
+      <span>이미 계정이 있으신가요? <a href="/login">로그인</a></span>
+    </div>
+  </div>
+</body>
+
+</html>
